@@ -14,7 +14,7 @@ config = configparser.ConfigParser()
 config.read('secrets.ini')
 
 API_KEY = config['API_KEYS']['GOOGLE_MAPS']
-PLACES_TYPES = ['park', 'point_of_interest', 'establishment', 'museum', 'library', 'church', 'art_gallery', 'political']
+PLACES_TYPES = ['retreat_center']
 # Search query operators.
 OPERATORS = {
 	'and': operator.and_,
