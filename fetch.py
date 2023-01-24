@@ -14,7 +14,7 @@ config = configparser.ConfigParser()
 config.read('secrets.ini')
 
 API_KEY = config['API_KEYS']['GOOGLE_MAPS']
-PLACES_TYPES = ['retreat_center']
+PLACES_TYPES = ['lodging','retreat_center']
 # Search query operators.
 OPERATORS = {
 	'and': operator.and_,
@@ -59,7 +59,7 @@ filename = ' '.join([q.capitalize() for q in query])
 # Set Wikipedia language.
 wikipedia.set_lang(args.language)
 
-columns = ['name', 'coordinates', 'types', 'rating', 'formatted address', 'summary', 'url', 'reviews']
+columns = ['name', 'coordinates', 'types', 'rating', 'formatted address', 'summary', 'url', 'reviews','website']
 with open(args.directory + f'/{filename}.csv', 'w', encoding='utf-8') as out_file:
 	writer = csv.writer(out_file, delimiter='|')
 	writer.writerow(columns)
